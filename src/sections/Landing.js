@@ -92,7 +92,7 @@ const LandingPage = () => (
                 {roles
                   .sort(() => deterministicBehaviour || Math.random() - 0.5)
                   .map(text => (
-                    <Text width={[300, 600]} key={text}>
+                    <Text width={[300, 800]} key={text}>
                       {text}
                     </Text>
                   ))}

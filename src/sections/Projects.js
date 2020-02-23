@@ -10,6 +10,7 @@ import SocialLink from '../components/SocialLink';
 import Triangle from '../components/Triangle';
 import ImageSubtitle from '../components/ImageSubtitle';
 import Hide from '../components/Hide';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Background = () => (
   <div>
@@ -97,21 +98,14 @@ const ProjectTag = styled.div`
   }
 `;
 
-const Project = ({
-  name,
-  description,
-  projectUrl,
-  repositoryUrl,
-  type,
-  publishedDate,
-  logo,
-}) => (
+const Project = ({ name, description, type, publishedDate, logo, links }) => (
   <Card p={0}>
     <Flex style={{ height: CARD_HEIGHT }}>
       <TextContainer>
         <span>
           <Title my={2} pb={1}>
-            {name}<Hide query={MEDIA_QUERY_NONSMALL}> ({publishedDate})</Hide>
+            {name}
+            <Hide query={MEDIA_QUERY_NONSMALL}> ({publishedDate})</Hide>
           </Title>
         </span>
         <Text width={[1]} style={{ overflow: 'auto' }}>
@@ -127,20 +121,18 @@ const Project = ({
               float: 'right',
             }}
           >
-            <Box mx={1} fontSize={5}>
-              <SocialLink
-                name="Check repository"
-                fontAwesomeIcon="github"
-                url={repositoryUrl}
-              />
-            </Box>
-            <Box mx={1} fontSize={5}>
-              <SocialLink
-                name="See project"
-                fontAwesomeIcon="globe"
-                url={projectUrl}
-              />
-            </Box>
+            {links.map(
+              ({ id, name, fontAwesomeIcon, fontAwesomeType, url }) => (
+                <Box mx={1} fontSize={[5]} key={id}>
+                  <SocialLink
+                    name={name}
+                    fontAwesomeIcon={fontAwesomeIcon}
+                    fontAwesomeType={fontAwesomeType}
+                    url={url}
+                  />
+                </Box>
+              ),
+            )}
           </Flex>
           <ImageSubtitle bg="primary" color="white" y="bottom" x="right" round>
             {type}
@@ -157,8 +149,6 @@ const Project = ({
 Project.propTypes = {
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  projectUrl: PropTypes.string.isRequired,
-  repositoryUrl: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
   publishedDate: PropTypes.string.isRequired,
   logo: PropTypes.shape({
@@ -167,11 +157,12 @@ Project.propTypes = {
     }),
     title: PropTypes.string,
   }).isRequired,
+  links: SocialLink,
 };
 
 const Projects = () => (
   <Section.Container id="projects" Background={Background}>
-    <Section.Header name="Projects" icon="💻" label="notebook" />
+    <Section.Header name="Projects" />
     <StaticQuery
       query={graphql`
         query ProjectsQuery {
@@ -180,8 +171,6 @@ const Projects = () => (
               id
               name
               description
-              projectUrl
-              repositoryUrl
               publishedDate(formatString: "YYYY")
               type
               logo {
@@ -190,6 +179,13 @@ const Projects = () => (
                   src
                 }
               }
+              links {
+                id
+                url
+                name
+                fontAwesomeIcon
+                fontAwesomeType
+              }
             }
           }
         }
@@ -197,7 +193,7 @@ const Projects = () => (
       render={({ contentfulAbout }) => (
         <CardContainer minWidth="350px">
           {contentfulAbout.projects.map((p, i) => (
-            <Fade bottom delay={i * 200} key={p.id}>
+            <Fade bottom delay={i * 100} key={p.id}>
               <Project {...p} />
             </Fade>
           ))}

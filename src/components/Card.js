@@ -3,7 +3,7 @@ import { Card as CardRebass } from 'rebass';
 
 export const CardContainer = styled.div`
   display: grid;
-  grid-gap: 30px;
+  grid-gap: 40px;
 
   grid-template-columns: repeat(
     auto-fill,

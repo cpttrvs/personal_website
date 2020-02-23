@@ -6,11 +6,31 @@ import PropTypes from 'prop-types';
 import 'tippy.js/dist/tippy.css'; // eslint-disable-line
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope, faGlobe } from '@fortawesome/free-solid-svg-icons';
-import { faItchIo, faTwitter, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import {
+  faEnvelope,
+  faGlobe,
+  faDownload,
+  faPlay,
+  faVideo,
+} from '@fortawesome/free-solid-svg-icons';
+import {
+  faItchIo,
+  faTwitter,
+  faGithub,
+  faLinkedin,
+} from '@fortawesome/free-brands-svg-icons';
 
-
-library.add(faItchIo, faTwitter, faGithub, faLinkedin, faEnvelope, faGlobe)
+library.add(
+  faItchIo,
+  faTwitter,
+  faGithub,
+  faLinkedin,
+  faEnvelope,
+  faGlobe,
+  faDownload,
+  faPlay,
+  faVideo,
+);
 
 const IconLink = styled(Link)`
   transition: color 0.5s;
@@ -32,7 +52,7 @@ const SocialLink = ({ fontAwesomeType, fontAwesomeIcon, name, url, color }) => (
       rel="noreferrer"
       aria-label={name}
     >
-      <FontAwesomeIcon icon={[fontAwesomeType, fontAwesomeIcon]}/>
+      <FontAwesomeIcon icon={[fontAwesomeType, fontAwesomeIcon]} />
     </IconLink>
   </Tippy>
 );

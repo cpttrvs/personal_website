@@ -47,9 +47,9 @@
         "firstPublishedAt": "2018-09-07T23:18:56.446Z",
         "publishedAt": "2018-09-07T23:18:56.446Z"
       },
-      "displayField": "name",
       "name": "Project",
       "description": "Project description",
+      "displayField": "name",
       "fields": [
         {
           "id": "name",
@@ -83,30 +83,10 @@
           "linkType": "Asset"
         },
         {
-          "id": "repositoryUrl",
-          "name": "RepositoryUrl",
-          "type": "Symbol",
-          "localized": false,
-          "required": false,
-          "validations": [],
-          "disabled": false,
-          "omitted": false
-        },
-        {
           "id": "description",
           "name": "Description",
           "type": "Symbol",
-          "localized": false,
-          "required": false,
-          "validations": [],
-          "disabled": false,
-          "omitted": false
-        },
-        {
-          "id": "projectUrl",
-          "name": "ProjectUrl",
-          "type": "Symbol",
-          "localized": false,
+          "localized": true,
           "required": false,
           "validations": [],
           "disabled": false,
@@ -116,11 +96,30 @@
           "id": "type",
           "name": "Type",
           "type": "Symbol",
-          "localized": false,
+          "localized": true,
           "required": false,
           "validations": [],
           "disabled": false,
           "omitted": false
+        },
+        {
+          "id": "links",
+          "name": "Links",
+          "type": "Array",
+          "localized": false,
+          "required": false,
+          "validations": [],
+          "disabled": false,
+          "omitted": false,
+          "items": {
+            "type": "Link",
+            "validations": [
+              {
+                "linkContentType": ["socialLink"]
+              }
+            ],
+            "linkType": "Entry"
+          }
         }
       ]
     },
@@ -130,13 +129,13 @@
           "sys": {
             "type": "Link",
             "linkType": "Space",
-            "id": "ntiequ7mc6q6"
+            "id": "55mt0rp9i6vl"
           }
         },
-        "id": "about",
+        "id": "project",
         "type": "ContentType",
-        "createdAt": "2018-09-07T23:18:52.234Z",
-        "updatedAt": "2018-09-17T12:05:25.813Z",
+        "createdAt": "2020-02-05T16:03:14.834Z",
+        "updatedAt": "2020-02-23T12:35:50.489Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -144,36 +143,36 @@
             "linkType": "Environment"
           }
         },
+        "publishedVersion": 11,
+        "publishedAt": "2020-02-23T12:35:50.489Z",
+        "firstPublishedAt": "2020-02-05T16:03:18.190Z",
         "createdBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "2XGcyQ3vKgm55htxMAIqsM"
+            "id": "27JO5utMexxIspP7CQL4Ic"
           }
         },
         "updatedBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "2XGcyQ3vKgm55htxMAIqsM"
+            "id": "27JO5utMexxIspP7CQL4Ic"
           }
         },
-        "publishedCounter": 5,
-        "version": 10,
+        "publishedCounter": 6,
+        "version": 12,
         "publishedBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "2XGcyQ3vKgm55htxMAIqsM"
+            "id": "27JO5utMexxIspP7CQL4Ic"
           }
-        },
-        "publishedVersion": 9,
-        "firstPublishedAt": "2018-09-07T23:18:58.249Z",
-        "publishedAt": "2018-09-17T12:05:25.813Z"
+        }
       },
-      "displayField": "name",
       "name": "About",
       "description": "All information related to personal data.",
+      "displayField": "name",
       "fields": [
         {
           "id": "name",
@@ -189,7 +188,7 @@
           "id": "description",
           "name": "Description",
           "type": "Symbol",
-          "localized": false,
+          "localized": true,
           "required": false,
           "validations": [],
           "disabled": false,
@@ -199,7 +198,7 @@
           "id": "roles",
           "name": "Roles",
           "type": "Array",
-          "localized": false,
+          "localized": true,
           "required": false,
           "validations": [],
           "disabled": false,
@@ -243,7 +242,7 @@
           "id": "aboutMe",
           "name": "About me",
           "type": "Text",
-          "localized": false,
+          "localized": true,
           "required": false,
           "validations": [],
           "disabled": false,
@@ -262,9 +261,7 @@
             "type": "Link",
             "validations": [
               {
-                "linkContentType": [
-                  "experience"
-                ]
+                "linkContentType": ["experience"]
               }
             ],
             "linkType": "Entry"
@@ -307,13 +304,13 @@
           "sys": {
             "type": "Link",
             "linkType": "Space",
-            "id": "ntiequ7mc6q6"
+            "id": "55mt0rp9i6vl"
           }
         },
-        "id": "socialLink",
+        "id": "about",
         "type": "ContentType",
-        "createdAt": "2018-09-07T23:18:52.248Z",
-        "updatedAt": "2018-09-17T12:03:26.939Z",
+        "createdAt": "2020-02-05T16:03:14.775Z",
+        "updatedAt": "2020-02-23T14:08:12.907Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -321,32 +318,32 @@
             "linkType": "Environment"
           }
         },
+        "publishedVersion": 17,
+        "publishedAt": "2020-02-23T14:08:12.907Z",
+        "firstPublishedAt": "2020-02-05T16:03:18.933Z",
         "createdBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "2XGcyQ3vKgm55htxMAIqsM"
+            "id": "27JO5utMexxIspP7CQL4Ic"
           }
         },
         "updatedBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "2XGcyQ3vKgm55htxMAIqsM"
+            "id": "27JO5utMexxIspP7CQL4Ic"
           }
         },
-        "publishedCounter": 2,
-        "version": 4,
+        "publishedCounter": 9,
+        "version": 18,
         "publishedBy": {
           "sys": {
             "type": "Link",
             "linkType": "User",
-            "id": "2XGcyQ3vKgm55htxMAIqsM"
+            "id": "27JO5utMexxIspP7CQL4Ic"
           }
-        },
-        "publishedVersion": 3,
-        "firstPublishedAt": "2018-09-07T23:18:57.463Z",
-        "publishedAt": "2018-09-17T12:03:26.939Z"
+        }
       },
       "displayField": "name",
       "name": "Social Link",
@@ -458,9 +455,9 @@
         {
           "id": "completed",
           "name": "Completed",
-          "type": "Date",
-          "localized": false,
-          "required": true,
+          "type": "Symbol",
+          "localized": true,
+          "required": false,
           "validations": [],
           "disabled": false,
           "omitted": false
@@ -486,15 +483,24 @@
           "omitted": false
         },
         {
-          "id": "logo",
-          "name": "Logo",
-          "type": "Link",
+          "id": "url",
+          "name": "Url",
+          "type": "Symbol",
           "localized": false,
           "required": false,
           "validations": [],
           "disabled": false,
-          "omitted": false,
-          "linkType": "Asset"
+          "omitted": false
+        },
+        {
+          "id": "fontAwesomeIcon",
+          "name": "FontAwesomeIcon",
+          "type": "Symbol",
+          "localized": false,
+          "required": false,
+          "validations": [],
+          "disabled": false,
+          "omitted": false
         }
       ]
     },
@@ -510,7 +516,7 @@
         "id": "experience",
         "type": "ContentType",
         "createdAt": "2020-02-06T22:30:24.087Z",
-        "updatedAt": "2020-02-08T13:10:00.498Z",
+        "updatedAt": "2020-02-23T12:07:11.567Z",
         "environment": {
           "sys": {
             "id": "master",
@@ -518,8 +524,8 @@
             "linkType": "Environment"
           }
         },
-        "publishedVersion": 37,
-        "publishedAt": "2020-02-08T13:10:00.498Z",
+        "publishedVersion": 65,
+        "publishedAt": "2020-02-23T12:07:11.567Z",
         "firstPublishedAt": "2020-02-06T22:30:24.780Z",
         "createdBy": {
           "sys": {
@@ -535,8 +541,8 @@
             "id": "27JO5utMexxIspP7CQL4Ic"
           }
         },
-        "publishedCounter": 19,
-        "version": 38,
+        "publishedCounter": 33,
+        "version": 66,
         "publishedBy": {
           "sys": {
             "type": "Link",
