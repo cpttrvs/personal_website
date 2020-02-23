@@ -130,7 +130,7 @@ const Experience = ({
     icon={
       <Tippy
         content={location}
-        placement="bottom"
+        placement="top"
         trigger="mouseenter"
         arrow={false}
       >
@@ -141,7 +141,7 @@ const Experience = ({
           rel="noreferrer"
           aria-label={location}
         >
-          <FontAwesomeIcon icon={fontAwesomeIcon} />
+          <FontAwesomeIcon icon={fontAwesomeIcon} width="16" />
         </IconLink>
       </Tippy>
     }

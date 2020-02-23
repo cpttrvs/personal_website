@@ -22,5 +22,6 @@ module.exports = {
   secondary: '#212126', // triangle left
   secondaryLight: '#f2efe9', // triangle mid + new text underline
   secondaryDark: '#212126', // text title
-  
+
+  white: '#FFFFFF',
 };

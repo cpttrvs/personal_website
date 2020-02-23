@@ -7,6 +7,7 @@ import Fade from 'react-reveal/Fade';
 import Section from '../components/Section';
 import Triangle from '../components/Triangle';
 import markdownRenderer from '../components/MarkdownRenderer';
+import Hide from '../components/Hide';
 
 const Background = () => (
   <div>
@@ -31,6 +32,11 @@ const Background = () => (
     />
   </div>
 );
+
+const MEDIA_QUERY_SMALL = '@media (max-width: 400px)';
+const MEDIA_QUERY_NONSMALL = '@media (min-width: 400px)';
+const MEDIA_MEDIUM = '@media (max-width: 52em)';
+const MEDIA_NONMEDIUM = '@media (min-width: 52em)';
 
 const ProfilePicture = styled(Image)`
   border-radius: 50%;
@@ -66,6 +72,22 @@ const About = () => (
         const { aboutMe, profile } = data.contentfulAbout;
         return (
           <Flex justifyContent="center" alignItems="center" flexWrap="wrap">
+            <Hide query={MEDIA_NONMEDIUM}>
+              <Box
+                width={[1, 1, 2 / 6]}
+                style={{ maxWidth: '300px', margin: 'auto' }}
+              >
+                <Fade right>
+                  <ProfilePicture
+                    src={profile.image.src}
+                    alt={profile.title}
+                    mt={[4, 4, 0]}
+                    ml={[0, 0, 1]}
+                  />
+                </Fade>
+              </Box>
+            </Hide>
+
             <Box width={[1, 1, 4 / 6]} px={[1, 2, 4]}>
               <Fade bottom>
                 <ReactMarkdown
@@ -79,14 +101,16 @@ const About = () => (
               width={[1, 1, 2 / 6]}
               style={{ maxWidth: '300px', margin: 'auto' }}
             >
-              <Fade right>
-                <ProfilePicture
-                  src={profile.image.src}
-                  alt={profile.title}
-                  mt={[4, 4, 0]}
-                  ml={[0, 0, 1]}
-                />
-              </Fade>
+              <Hide query={MEDIA_MEDIUM}>
+                <Fade right>
+                  <ProfilePicture
+                    src={profile.image.src}
+                    alt={profile.title}
+                    mt={[4, 4, 0]}
+                    ml={[0, 0, 1]}
+                  />
+                </Fade>
+              </Hide>
             </Box>
           </Flex>
         );

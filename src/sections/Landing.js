@@ -13,13 +13,13 @@ const Background = () => (
     <Triangle
       color="backgroundDark"
       height={['35vh', '80vh']}
-      width={['95vw', '60vw']}
+      width={['135vw', '60vw']}
     />
 
     <Triangle
       color="secondary"
-      height={['38vh', '80vh']}
-      width={['50vw', '35vw']}
+      height={['35vh', '80vh']}
+      width={['90vw', '35vw']}
     />
 
     <Triangle
