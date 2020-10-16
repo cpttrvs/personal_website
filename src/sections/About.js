@@ -40,16 +40,16 @@ const MEDIA_NONMEDIUM = '@media (min-width: 52em)';
 
 const ProfilePicture = styled(Image)`
   border-radius: 50%;
-  transition: all 0.25s ease-out;
+  transition: all 0.125s ease-out;
 
   &:hover {
-    border-radius: 20%;
+    box-shadow: 0 0 0 4px #668f6c;
   }
 `;
 
 const About = () => (
   <Section.Container id="about" Background={Background}>
-    <Section.Header name="About me" />
+    <Section.Header name="about me" />
     <StaticQuery
       query={graphql`
         query AboutMeQuery {

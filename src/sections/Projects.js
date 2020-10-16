@@ -56,7 +56,7 @@ const TextContainer = styled.div`
   flex-direction: column;
   padding: 10px;
   width: 100%;
-  width: calc(100% - ${CARD_HEIGHT});
+  width: calc(120% - ${CARD_HEIGHT});
 
   ${MEDIA_QUERY_SMALL} {
     width: calc(100% - (${CARD_HEIGHT} / 2));
@@ -75,7 +75,7 @@ const ImageContainer = styled.div`
 const ProjectImage = styled(Image)`
   width: ${CARD_HEIGHT};
   height: ${CARD_HEIGHT};
-  padding: 40px;
+  padding: 40px 20px 40px 20px;
   margin-top: 0px;
 
   ${MEDIA_QUERY_SMALL} {
@@ -104,8 +104,7 @@ const Project = ({ name, description, type, publishedDate, logo, links }) => (
       <TextContainer>
         <span>
           <Title my={2} pb={1}>
-            {name}
-            <Hide query={MEDIA_QUERY_NONSMALL}> ({publishedDate})</Hide>
+            {name} ({publishedDate})
           </Title>
         </span>
         <Text width={[1]} style={{ overflow: 'auto' }}>
@@ -137,9 +136,6 @@ const Project = ({ name, description, type, publishedDate, logo, links }) => (
           <ImageSubtitle bg="primary" color="white" y="bottom" x="right" round>
             {type}
           </ImageSubtitle>
-          <Hide query={MEDIA_QUERY_SMALL}>
-            <ImageSubtitle bg="backgroundDark">{publishedDate}</ImageSubtitle>
-          </Hide>
         </ProjectTag>
       </ImageContainer>
     </Flex>
@@ -162,7 +158,7 @@ Project.propTypes = {
 
 const Projects = () => (
   <Section.Container id="projects" Background={Background}>
-    <Section.Header name="Projects" />
+    <Section.Header name="projects" />
     <StaticQuery
       query={graphql`
         query ProjectsQuery {

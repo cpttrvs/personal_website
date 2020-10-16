@@ -20,9 +20,14 @@ import 'react-vertical-timeline-component/style.min.css';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGraduationCap, faSuitcase } from '@fortawesome/free-solid-svg-icons';
+import {
+  faGraduationCap,
+  faUserGraduate,
+  faSuitcase,
+  faBriefcase,
+} from '@fortawesome/free-solid-svg-icons';
 
-library.add(faGraduationCap, faSuitcase);
+library.add(faGraduationCap, faUserGraduate, faSuitcase, faBriefcase);
 
 const Background = () => (
   <div>
@@ -141,7 +146,13 @@ const Experience = ({
           rel="noreferrer"
           aria-label={location}
         >
-          <FontAwesomeIcon icon={fontAwesomeIcon} width="16" />
+          <FontAwesomeIcon
+            icon={fontAwesomeIcon}
+            pull="left"
+            fixedWidth="true"
+            viewBox="0 0 512 512"
+            width="48"
+          />
         </IconLink>
       </Tippy>
     }
@@ -201,7 +212,7 @@ const Experiences = () => (
 
 const Experiences = () => (
   <Section.Container id="experiences" Background={Background}>
-    <Section.Header name="Experiences" />
+    <Section.Header name="experiences" />
     <StaticQuery
       query={graphql`
         query ExperiencesQuery {

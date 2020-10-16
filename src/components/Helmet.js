@@ -63,18 +63,7 @@ const Helmet = ({ theme = {} }) => (
             sizes="180x180"
             href={`https:${profile.appleIcon.src}`}
           />
-          <link
-            rel="icon"
-            type="image/png"
-            sizes="32x32"
-            href={`https:${Logo.src}`}
-          />
-          <link
-            rel="icon"
-            type="image/png"
-            sizes="16x16"
-            href={`https:${Logo.src}`}
-          />
+          <link rel="icon" type="image/png" href={`https:${Logo.src}`} />
         </ReactHelmet>
       );
     }}

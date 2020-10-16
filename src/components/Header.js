@@ -29,7 +29,7 @@ const formatLinks = allLinks =>
           }
         : {
             ...acc,
-            links: [...acc.links, { name: capitalize(key), value }],
+            links: [...acc.links, { name: key, value }],
           };
     },
     { links: [], home: null },
